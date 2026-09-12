@@ -3,6 +3,7 @@ let humanChoice;
 let computerResult;
 let humanResult;
 
+// setting scores to 0
 let humanScore = 0;
 let computerScore = 0;
 
@@ -19,6 +20,12 @@ let tieVictory = "It's a tie :("
 
 const computerSelection = getComputerChoice();
 const humanSelection = getHumanChoice();
+
+// select buttons
+
+var rock = document.querySelector('#rock');
+var paper = document.querySelector('#paper');
+var scissors = document.querySelector('#scissors');
 
 function getComputerChoice (choice) {
     computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -101,7 +108,7 @@ function playRound(computerChoice, humanChoice) {
     return humanChoice;
 } 
 
-function playGame(){
+/*function playGame(){
     for(let round = 1; round < 6; round++){
         let hc = getHumanChoice();
         let cc = getComputerChoice();
@@ -120,7 +127,7 @@ function playGame(){
     else if (computerScore == humanScore){
         console.log("Tie, no one wins OR loses.")
     }
-}
+} */
 
 playGame(); 
 
