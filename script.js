@@ -1,8 +1,5 @@
 let computerChoice;
 let humanChoice;
-let computerResult;
-let computerRandom;
-let humanResult;
 
 // setting scores to 0
 let humanScore = 0;
@@ -20,99 +17,90 @@ let humanVictory = "You win the game!";
 let tieVictory = "It's a tie :("
 
 function getComputerChoice (choice) {
-    computerChoice = Math.floor(Math.random() * 3) + 1;
-    computerResult;
+    let num = Math.floor(Math.random() * 3) + 1;
 
-    if (computerChoice === 1) {
-        computerResult = "rock";
+    if (num === 1) {
+        computerChoice = "rock";
     }
-    else if (computerChoice === 2) {
-        computerResult = "paper";
+    else if (num === 2) {
+        computerChoice = "paper";
     } 
-    else if (computerChoice === 3) {
-        computerResult = "scissors";
+    else if (num === 3) {
+        computerChoice = "scissors";
     }
     else {
-        computerResult = "How did you mess up?";
-    } 
-    return computerResult;
+        computerChoice = "How did you mess up?";
+    }
+    return computerChoice;
 }
 
-/* // select buttons
-
+// select buttons
 var rock = document.querySelector('#rock');
 var paper = document.querySelector('#paper');
 var scissors = document.querySelector('#scissors');
 
 rock.addEventListener('click', () => {
-    humanResult = "rock";
-    playRound();
+    humanChoice = "rock";
 });
 
 paper.addEventListener('click', () => {
-    humanResult = "paper";
+    humanChoice = "paper";
+});
+
+scissors.addEventListener('click', () => {
+    humanChoice = "scissors";
     playRound();
 })
 
-scissors.addEventListener('click', () => {
-    humanResult = "scissors";
-    //console.log(computerChoice);
-    //console.log(computerResult);
-    console.log(humanResult);
-    playRound();
-}) */
-
-/* function getHumanChoice (choice) {
-    humanChoice = prompt("Rock, Paper, or Scissors?")
-    humanResult = humanChoice.toLowerCase();
-    return humanResult;
-} */
-
-function playRound(computerChoice, humanResult) {
+function playRound(computer, human) {
+    humanChoice = humanChoice;
+    computerChoice = getComputerChoice();
+    console.log(humanChoice);
+    console.log(computerChoice);
 
     // rock vs scissors
-    if (computerResult === "rock" && humanResult === "scissors") {
+    if (computerChoice === "rock" && humanChoice === "scissors") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(computerWins);
         computerScore++;
     } 
-    else if (humanResult === "rock" && computerResult === "scissors") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
+    else if (humanChoice === "rock" && computerChoice === "scissors") {
+        console.log("Computer chose " + computerResult + " and human chose " + humanChoice);
         console.log(humanWins);
         humanScore++;
     }
     // scissors vs paper
-    else if (computerResult === "scissors" && humanResult === "paper") {
+    else if (computerChoice === "scissors" && humanChoice === "paper") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(computerWins);
         computerScore++;
     }
-    else if (humanResult === "scissors" && computerResult === "paper") {
+    else if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(humanWins);
         humanScore++;
     }
     // rock vs paper
-    else if (computerResult === "rock" && humanResult === "paper") {
+    else if (computerChoice === "rock" && humanChoice === "paper") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(humanWins);
         humanScore++;
     }
-    else if (humanResult === "rock" && computerResult === "paper") {
+    else if (humanChoice === "rock" && computerChoice === "paper") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(computerWins);
         computerScore++;
     }
     // ties
-    else if (humanResult === "paper" && computerResult === "paper") {
+    else if (humanChoice === "paper" && computerChoice === "paper") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(tie);
     }
-    else if (humanResult === "rock" && computerResult === "rock") {
+    else if (humanChoice === "rock" && computerChoice === "rock") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(tie);
     }
-    else if (humanResult === "scissors" && computerResult === "scissors") {
+    else if (humanChoice === "scissors" && computerChoice === "scissors") {
         console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(tie);
     }
@@ -124,7 +112,7 @@ function playRound(computerChoice, humanResult) {
     return humanChoice;
 } 
 
-function playGame(){
+/*function playGame(){
     for(let round = 1; round < 6; round++){
         let hc = getHumanChoice();
         let cc = getComputerChoice();
@@ -145,7 +133,4 @@ function playGame(){
     }
 } 
 
-playGame(); 
-
-console.log("Final computer score: " + computerScore);
-console.log("Final human score: " + humanScore); 
+playGame(); */
