@@ -1,6 +1,7 @@
 let computerChoice;
 let humanChoice;
 let computerResult;
+let computerRandom;
 let humanResult;
 
 // setting scores to 0
@@ -18,15 +19,6 @@ let computerVictory = "Computer wins the game!";
 let humanVictory = "You win the game!";
 let tieVictory = "It's a tie :("
 
-const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice();
-
-// select buttons
-
-var rock = document.querySelector('#rock');
-var paper = document.querySelector('#paper');
-var scissors = document.querySelector('#scissors');
-
 function getComputerChoice (choice) {
     computerChoice = Math.floor(Math.random() * 3) + 1;
     computerResult;
@@ -42,17 +34,41 @@ function getComputerChoice (choice) {
     }
     else {
         computerResult = "How did you mess up?";
-    }
+    } 
     return computerResult;
 }
 
-function getHumanChoice (choice) {
+/* // select buttons
+
+var rock = document.querySelector('#rock');
+var paper = document.querySelector('#paper');
+var scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', () => {
+    humanResult = "rock";
+    playRound();
+});
+
+paper.addEventListener('click', () => {
+    humanResult = "paper";
+    playRound();
+})
+
+scissors.addEventListener('click', () => {
+    humanResult = "scissors";
+    //console.log(computerChoice);
+    //console.log(computerResult);
+    console.log(humanResult);
+    playRound();
+}) */
+
+/* function getHumanChoice (choice) {
     humanChoice = prompt("Rock, Paper, or Scissors?")
     humanResult = humanChoice.toLowerCase();
     return humanResult;
-}
+} */
 
-function playRound(computerChoice, humanChoice) {
+function playRound(computerChoice, humanResult) {
 
     // rock vs scissors
     if (computerResult === "rock" && humanResult === "scissors") {
@@ -108,7 +124,7 @@ function playRound(computerChoice, humanChoice) {
     return humanChoice;
 } 
 
-/*function playGame(){
+function playGame(){
     for(let round = 1; round < 6; round++){
         let hc = getHumanChoice();
         let cc = getComputerChoice();
@@ -127,9 +143,9 @@ function playRound(computerChoice, humanChoice) {
     else if (computerScore == humanScore){
         console.log("Tie, no one wins OR loses.")
     }
-} */
+} 
 
 playGame(); 
 
 console.log("Final computer score: " + computerScore);
-console.log("Final human score: " + humanScore);
+console.log("Final human score: " + humanScore); 
