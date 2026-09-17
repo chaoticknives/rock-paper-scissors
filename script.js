@@ -41,10 +41,12 @@ var scissors = document.querySelector('#scissors');
 
 rock.addEventListener('click', () => {
     humanChoice = "rock";
+    playRound();
 });
 
 paper.addEventListener('click', () => {
     humanChoice = "paper";
+    playRound();
 });
 
 scissors.addEventListener('click', () => {
