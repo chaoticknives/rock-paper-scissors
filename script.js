@@ -1,13 +1,12 @@
 let computerChoice;
 let humanChoice;
 
-// setting scores to 0
+// setting scores and round to 0
 let humanWins = 0;
 let computerWins = 0;
+let currentRound = 0;
 
 // round responses
-//let computerWins = "Computer wins this round!";
-//let humanWins = "Human wins this round!";
 let tie = "Tie, no one wins or loses!";
 let uhOh = "You messed up!"; //debugging
 
@@ -20,6 +19,8 @@ let tieVictory = "It's a tie :("
 var score = document.querySelector('#score')
 var humanScore = document.querySelector('#humanScore');
 var computerScore = document.querySelector('#computerScore');
+
+
 
 function getComputerChoice (choice) {
     let num = Math.floor(Math.random() * 3) + 1;
@@ -46,16 +47,22 @@ var scissors = document.querySelector('#scissors');
 
 rock.addEventListener('click', () => {
     humanChoice = "rock";
+    currentRound++;
+    round.textContent = currentRound;
     playRound();
 });
 
 paper.addEventListener('click', () => {
     humanChoice = "paper";
+    currentRound++;
+    round.textContent = currentRound;
     playRound();
 });
 
 scissors.addEventListener('click', () => {
     humanChoice = "scissors";
+    currentRound++;
+    round.textContent = currentRound;
     playRound();
 })
 
