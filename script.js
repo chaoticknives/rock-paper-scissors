@@ -2,12 +2,12 @@ let computerChoice;
 let humanChoice;
 
 // setting scores to 0
-let humanScore = 0;
-let computerScore = 0;
+let humanWins = 0;
+let computerWins = 0;
 
 // round responses
-let computerWins = "Computer wins this round!";
-let humanWins = "Human wins this round!";
+//let computerWins = "Computer wins this round!";
+//let humanWins = "Human wins this round!";
 let tie = "Tie, no one wins or loses!";
 let uhOh = "You messed up!"; //debugging
 
@@ -15,6 +15,11 @@ let uhOh = "You messed up!"; //debugging
 let computerVictory = "Computer wins the game!";
 let humanVictory = "You win the game!";
 let tieVictory = "It's a tie :("
+
+// Select score elements
+var score = document.querySelector('#score')
+var humanScore = document.querySelector('#humanScore');
+var computerScore = document.querySelector('#computerScore');
 
 function getComputerChoice (choice) {
     let num = Math.floor(Math.random() * 3) + 1;
@@ -62,49 +67,49 @@ function playRound(computer, human) {
 
     // rock vs scissors
     if (computerChoice === "rock" && humanChoice === "scissors") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
-        console.log(computerWins);
-        computerScore++;
+        computerWins++;
+        computerScore.textContent = computerWins;
+        //roundWinner.textContent = "You choose scissors and computer choose rock. You lose this round!"
     } 
     else if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("Computer chose " + computerResult + " and human chose " + humanChoice);
-        console.log(humanWins);
-        humanScore++;
+        humanWins++;
+        humanScore.textContent = humanWins;
+        //roundWinner.textContent = "You choose rock and computer choose scissors. You win this round!"
     }
     // scissors vs paper
     else if (computerChoice === "scissors" && humanChoice === "paper") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
-        console.log(computerWins);
-        computerScore++;
+        computerWins++;
+        computerScore.textContent = computerWins;
+        //roundWinner.textContent = "You choose paper and computer choose scissors. You lose this round!"
     }
     else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
-        console.log(humanWins);
-        humanScore++;
+        humanWins++;
+        humanScore.textContent = humanWins;
+        //roundWinner.textContent = "You choose scissors and computer choose paper. You win this round!"
     }
     // rock vs paper
     else if (computerChoice === "rock" && humanChoice === "paper") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
-        console.log(humanWins);
-        humanScore++;
+        humanWins++;
+        humanScore.textContent = humanWins;
+        //roundWinner.textContent = "You choose paper and computer choose rock. You win this round!"
     }
     else if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
-        console.log(computerWins);
-        computerScore++;
+        computerWins++;
+        computerScore.textContent = computerWins;
+        //roundWinner.textContent = "You choose rock and computer choose paper. You lose this round!"
     }
     // ties
     else if (humanChoice === "paper" && computerChoice === "paper") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(tie);
+       //roundWinner.textContent = "You choose paper and computer choose paper. Tie, no points for either!"
     }
     else if (humanChoice === "rock" && computerChoice === "rock") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(tie);
+       //roundWinner.textContent = "You choose rock and computer choose rock. Tie, no points for either!"
     }
     else if (humanChoice === "scissors" && computerChoice === "scissors") {
-        console.log("Computer chose " + computerChoice + " and human chose " + humanChoice);
         console.log(tie);
+       //roundWinner.textContent = "You choose scissors and computer choose scissors. Tie, no points for either!"
     }
     else {
         console.log(uhOh);
