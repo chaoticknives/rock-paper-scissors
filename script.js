@@ -20,7 +20,10 @@ var score = document.querySelector('#score')
 var humanScore = document.querySelector('#humanScore');
 var computerScore = document.querySelector('#computerScore');
 
-
+var roundWinner = document.createElement('p');
+var gameWinner = document.createElement('p');
+score.appendChild(roundWinner);
+score.appendChild(gameWinner);
 
 function getComputerChoice (choice) {
     let num = Math.floor(Math.random() * 3) + 1;
@@ -76,47 +79,47 @@ function playRound(computer, human) {
     if (computerChoice === "rock" && humanChoice === "scissors") {
         computerWins++;
         computerScore.textContent = computerWins;
-        //roundWinner.textContent = "You choose scissors and computer choose rock. You lose this round!"
+        roundWinner.textContent = "You choose scissors and computer choose rock. You lose this round!"
     } 
     else if (humanChoice === "rock" && computerChoice === "scissors") {
         humanWins++;
         humanScore.textContent = humanWins;
-        //roundWinner.textContent = "You choose rock and computer choose scissors. You win this round!"
+        roundWinner.textContent = "You choose rock and computer choose scissors. You win this round!"
     }
     // scissors vs paper
     else if (computerChoice === "scissors" && humanChoice === "paper") {
         computerWins++;
         computerScore.textContent = computerWins;
-        //roundWinner.textContent = "You choose paper and computer choose scissors. You lose this round!"
+        roundWinner.textContent = "You choose paper and computer choose scissors. You lose this round!"
     }
     else if (humanChoice === "scissors" && computerChoice === "paper") {
         humanWins++;
         humanScore.textContent = humanWins;
-        //roundWinner.textContent = "You choose scissors and computer choose paper. You win this round!"
+        roundWinner.textContent = "You choose scissors and computer choose paper. You win this round!"
     }
     // rock vs paper
     else if (computerChoice === "rock" && humanChoice === "paper") {
         humanWins++;
         humanScore.textContent = humanWins;
-        //roundWinner.textContent = "You choose paper and computer choose rock. You win this round!"
+        roundWinner.textContent = "You choose paper and computer choose rock. You win this round!"
     }
     else if (humanChoice === "rock" && computerChoice === "paper") {
         computerWins++;
         computerScore.textContent = computerWins;
-        //roundWinner.textContent = "You choose rock and computer choose paper. You lose this round!"
+        roundWinner.textContent = "You choose rock and computer choose paper. You lose this round!"
     }
     // ties
     else if (humanChoice === "paper" && computerChoice === "paper") {
         console.log(tie);
-       //roundWinner.textContent = "You choose paper and computer choose paper. Tie, no points for either!"
+       roundWinner.textContent = "You choose paper and computer choose paper. Tie, no points for either!"
     }
     else if (humanChoice === "rock" && computerChoice === "rock") {
         console.log(tie);
-       //roundWinner.textContent = "You choose rock and computer choose rock. Tie, no points for either!"
+       roundWinner.textContent = "You choose rock and computer choose rock. Tie, no points for either!"
     }
     else if (humanChoice === "scissors" && computerChoice === "scissors") {
         console.log(tie);
-       //roundWinner.textContent = "You choose scissors and computer choose scissors. Tie, no points for either!"
+       roundWinner.textContent = "You choose scissors and computer choose scissors. Tie, no points for either!"
     }
     else {
         console.log(uhOh);
