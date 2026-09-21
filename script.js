@@ -110,44 +110,25 @@ function playRound(computer, human) {
     }
     // ties
     else if (humanChoice === "paper" && computerChoice === "paper") {
-        console.log(tie);
        roundWinner.textContent = "You choose paper and computer choose paper. Tie, no points for either!"
     }
     else if (humanChoice === "rock" && computerChoice === "rock") {
-        console.log(tie);
        roundWinner.textContent = "You choose rock and computer choose rock. Tie, no points for either!"
     }
     else if (humanChoice === "scissors" && computerChoice === "scissors") {
-        console.log(tie);
        roundWinner.textContent = "You choose scissors and computer choose scissors. Tie, no points for either!"
     }
     else {
         console.log(uhOh);
     }
 
+    if (humanWins == 5) {
+        gameWinner.textContent = "You won the game!";
+    }
+    else if (computerWins == 5) {
+        gameWinner.textContent = "Computer won the game!";
+    }
+
     return computerChoice;
     return humanChoice;
 } 
-
-/*function playGame(){
-    for(let round = 1; round < 6; round++){
-        let hc = getHumanChoice();
-        let cc = getComputerChoice();
-
-        console.log("Round " + round + ": \n" )
-
-        playRound(hc, cc);
-    }
-
-    if (humanScore > computerScore){
-        console.log("You won the game!")
-    }
-    else if (computerScore > humanScore){
-        console.log("You lost the game :(!")
-    }
-    else if (computerScore == humanScore){
-        console.log("Tie, no one wins OR loses.")
-    }
-} 
-
-playGame(); */
